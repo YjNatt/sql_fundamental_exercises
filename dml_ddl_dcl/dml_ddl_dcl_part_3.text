@@ -1,0 +1,7 @@
+CREATE TABLE things (
+  id serial PRIMARY KEY,
+  item text NOT NULL UNIQUE,
+  material text NOT NULL
+);
+
+This is an example of Data Definition Language because we are not manipulating any data in a database but instead we are creating the structure of a table in our database.

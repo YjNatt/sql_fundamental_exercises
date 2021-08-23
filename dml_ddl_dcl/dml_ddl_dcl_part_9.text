@@ -1,0 +1,3 @@
+DROP DATABASE xyzzy;
+
+This is an example of Data Definition Language because we are removing the entire structure of our xyzzy database.

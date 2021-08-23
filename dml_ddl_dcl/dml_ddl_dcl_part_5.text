@@ -1,0 +1,4 @@
+INSERT INTO things
+VALUES (3, 'Scissors', 'Metal');
+
+This is an example of Data Manipulation Language because we are manipulating data by inserting new data in our database

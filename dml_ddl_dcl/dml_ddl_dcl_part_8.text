@@ -1,0 +1,3 @@
+DELETE FROM things WHERE item = 'Cup';
+
+This is an example of Data Manipulation Language because we are manipulating the data by deleting all rows where the item is 'Cup'

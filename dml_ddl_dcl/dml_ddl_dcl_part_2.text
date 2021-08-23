@@ -1,0 +1,3 @@
+SELECT column_name FROM my_table;
+
+This is an example of Data Manipulation Language because we are reading and manipulate the data from the database

@@ -1,0 +1,3 @@
+CREATE SEQUENCE part_number_sequence;
+
+This is an example of Data Definition Language because we are not manipulating any data but instead we are changing the characteristics and attributes of a database.

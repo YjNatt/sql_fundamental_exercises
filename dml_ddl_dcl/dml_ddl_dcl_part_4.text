@@ -1,0 +1,4 @@
+ALTER TABLE things
+DROP CONSTRAINT things_item_key;
+
+This is another example of Data Definition Language because we are altering the structure of the able by removing the constraint 'things_item_key'

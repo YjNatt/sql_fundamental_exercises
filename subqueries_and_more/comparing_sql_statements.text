@@ -1,0 +1,34 @@
+EXPLAIN ANALYZE SELECT MAX(bid_counts.count) FROM
+  (SELECT COUNT(bidder_id) FROM bids GROUP BY bidder_id) AS bid_counts;
+
+#################################################################################################
+
+Aggregate  (cost=37.15..37.16 rows=1 width=8) (actual time=0.059..0.060 rows=1 loops=1)          
+   ->  HashAggregate  (cost=32.65..34.65 rows=200 width=12) (actual time=0.050..0.054 rows=6 loops
+=1)                                                                                               
+         Group Key: bids.bidder_id                                                                
+         ->  Seq Scan on bids  (cost=0.00..25.10 rows=1510 width=4) (actual time=0.017..0.022 rows
+=26 loops=1)                                                                                      
+ Planning Time: 0.157 ms                                                                          
+ Execution Time: 0.126 ms                                                                         
+(6 rows)        
+-------------------------------------------------------------------------------------------------
+EXPLAIN ANALYZE SELECT COUNT(bidder_id) AS max_bid FROM bids
+  GROUP BY bidder_id
+  ORDER BY max_bid DESC
+  LIMIT 1;
+
+#################################################################################################
+
+ Limit  (cost=35.65..35.65 rows=1 width=12) (actual time=0.080..0.080 rows=1 loops=1)             
+   ->  Sort  (cost=35.65..36.15 rows=200 width=12) (actual time=0.078..0.078 rows=1 loops=1)      
+         Sort Key: (count(bidder_id)) DESC                                                        
+         Sort Method: top-N heapsort  Memory: 25kB                                                
+         ->  HashAggregate  (cost=32.65..34.65 rows=200 width=12) (actual time=0.043..0.046 rows=6
+ loops=1)                                                                                         
+               Group Key: bidder_id                                                               
+               ->  Seq Scan on bids  (cost=0.00..25.10 rows=1510 width=4) (actual time=0.012..0.01
+6 rows=26 loops=1)                                                                                
+ Planning Time: 0.194 ms                                                                          
+ Execution Time: 0.138 ms                                                                         
+(9 rows)  

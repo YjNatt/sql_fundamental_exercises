@@ -1,0 +1,14 @@
+data manipulation language (DML)
+
+- are the CRUD operations to manipulate data in a database
+
+- INSERT
+- DELETE
+
+data definition language (DDL)
+
+- is used to create, modify, and delete tables and databases.
+- They are in charge of the structure of the database.
+
+- CREATE
+- DROP

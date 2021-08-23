@@ -1,0 +1,6 @@
+UPDATE things
+SET material = 'plastic;
+WHERE item = 'Cup';
+
+This is an example of Data Manipulation Language because we are manipulating the data in our database by updating the material to 'plastic' for the item 'Cup'
+
